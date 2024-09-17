@@ -1,0 +1,50 @@
+<!-- ZTM Favicon -->
+<!-- <link rel="icon" type="image/png" href="favicon.png"> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NASA API Pictures</title>
+    <link rel="stylesheet" href="nasa-style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://s2.googleusercontent.com/s2/favicons?domain=www.nasa.gov"
+    />
+  </head>
+  <body>
+    <!-- Loader -->
+    <div class="loader hidden">
+      <img src="rocket.svg" alt="Rocket Loading Animation" />
+    </div>
+
+    <div class="main-container">
+      <div class="container">
+        <!-- navigation -->
+        <div class="navigation-container">
+          <span class="background"></span>
+
+          <!-- results Nav -->
+          <span class="navigation-items" id="resultsNav">
+            <h3 class="clickable" onclick="updateDOM('favorites')">Favorites</h3>
+            <h3 class="bullet">&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</h3>
+            <h3 class="clickable" onclick="getNasaPictures()">Load More</h3>
+          </span>
+
+          <!-- Favorites Nav -->
+          <span class="navigation-items hidden" id="favoritesNav">
+            <h3 class="clickable" onclick="getNasaPictures()">Load More NASA Images</h3>
+          </span>
+        </div>
+      </div>
+      <div class="images-container"></div>
+
+      <!-- save confiramtion -->
+      <div class="save-confirmed" hidden>
+        <h2 class="added">ADDED!</h2>
+      </div>
+    </div>
+    <script src="apod-fetch.js"></script>
+  </body>
+</html>
